@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
   devise_for :utilisateurs
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  devise_scope :utilisateur do
+    root to: 'devise/sessions#new'
+  end
+
+  get 'tournois', to: 'tournois#affichage_des_tournois'
+
 end

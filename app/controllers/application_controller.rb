@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:prenom])
 
     devise_parameter_sanitizer.permit(:account_update, keys: [:prenom])
- end
+  end
+
+  def after_sign_in_path_for(resource)
+    tournois_path
+  end
 
 end

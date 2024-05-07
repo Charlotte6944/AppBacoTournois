@@ -1,0 +1,3 @@
+class Tournoi < ApplicationRecord
+
+end
